@@ -4,7 +4,7 @@
     "subtitle": "Honest reviews, detailed comparisons, and expert recommendations to help you make informed purchasing decisions. Save time and money with our curated picks.",
     "primaryCta": {
       "text": "Browse Reviews",
-      "url": "/blog"
+      "url": "/reviews"
     },
     "secondaryCta": {
       "text": "Shop by Category",
@@ -30,7 +30,7 @@
       "description": "Smartphones, laptops, tablets, and cutting-edge tech gadgets"
     },
     {
-      "name": "Home Garden",
+      "name": "Home & Garden",
       "icon": "home",
       "count": 32,
       "colorClass": "bg-green-100 text-green-800",

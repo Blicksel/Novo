@@ -1,6 +1,6 @@
 ---
 // Dynamic category management component
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 export interface Props {
   showAll?: boolean;
@@ -11,11 +11,11 @@ export interface Props {
 const { showAll = false, featured = false, limit } = Astro.props;
 
 // Get all categories from CMS
-let categories = await getCollection('categories');
+let categories = await getCollection("categories");
 
 // Filter categories based on props
 if (featured) {
-  categories = categories.filter(cat => cat.data.featured);
+  categories = categories.filter((cat) => cat.data.featured);
 }
 
 // Sort categories by product count (descending) or alphabetically

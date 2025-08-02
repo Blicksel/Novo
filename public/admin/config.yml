@@ -4,6 +4,8 @@ backend:
   branch: main
   app_id: Ov23lisxNiRKk2DXBjXt
   auth_scope: repo
+  base_url: https://api.netlify.com
+  auth_endpoint: /auth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
@@ -17,7 +19,7 @@ display_url: https://picks.blicksel.com
 logo_url: https://picks.blicksel.com/images/logo.png
 
 collections:
-  # Site Settings
+  # ✅ Site Settings
   - name: "settings"
     label: "Site Settings"
     files:
@@ -36,8 +38,8 @@ collections:
               - { label: "Facebook", name: "facebook", widget: "string", required: false }
               - { label: "Twitter", name: "twitter", widget: "string", required: false }
               - { label: "Instagram", name: "instagram", widget: "string", required: false }
-              
-  # Navigation
+
+  # ✅ Navigation
   - name: "navigation"
     label: "Navigation"
     files:
@@ -68,8 +70,8 @@ collections:
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "URL", name: "url", widget: "string" }
-                  
-  # Contact Information
+
+  # ✅ Contact Information
   - name: "contact"
     label: "Contact Information"
     files:
@@ -95,7 +97,7 @@ collections:
               - { label: "Send To Email", name: "emailTo", widget: "string" }
               - { label: "Subject Options", name: "subjects", widget: "list" }
 
-  # Blog posts
+  # ✅ Blog Posts
   - name: "blog"
     label: "Blog Posts"
     folder: "src/content/blog"
@@ -110,11 +112,11 @@ collections:
       - { label: "Author", name: "author", widget: "string", default: "Blicksel Picks Team" }
       - { label: "Publish Date", name: "publishDate", widget: "datetime" }
       - { label: "Featured Post", name: "featured", widget: "boolean", default: false }
-      - { label: "Amazon Button URL", name: "amazon_button_url", widget: "string", required: false, hint: "Optional: Add Amazon affiliate link to show 'Buy on Amazon' button" }
-      - { label: "Amazon Button Text", name: "amazon_button_text", widget: "string", default: "Buy on Amazon", required: false, hint: "Customize button text (default: Buy on Amazon)" }
+      - { label: "Amazon Button URL", name: "amazon_button_url", widget: "string", required: false }
+      - { label: "Amazon Button Text", name: "amazon_button_text", widget: "string", default: "Buy on Amazon", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
-      
-  # Product Reviews
+
+  # ✅ Product Reviews
   - name: "reviews"
     label: "Product Reviews"
     folder: "src/content/reviews"
@@ -133,11 +135,11 @@ collections:
       - { label: "Best For", name: "bestFor", widget: "string" }
       - { label: "Author", name: "author", widget: "string", default: "Blicksel Picks Team" }
       - { label: "Publish Date", name: "publishDate", widget: "datetime" }
-      - { label: "Amazon Button URL", name: "amazon_button_url", widget: "string", required: false, hint: "Optional: Add Amazon affiliate link to show 'Buy on Amazon' button" }
-      - { label: "Amazon Button Text", name: "amazon_button_text", widget: "string", default: "Buy on Amazon", required: false, hint: "Customize button text (default: Buy on Amazon)" }
+      - { label: "Amazon Button URL", name: "amazon_button_url", widget: "string", required: false }
+      - { label: "Amazon Button Text", name: "amazon_button_text", widget: "string", default: "Buy on Amazon", required: false }
       - { label: "Review Content", name: "body", widget: "markdown" }
-      
-  # Categories
+
+  # ✅ Categories
   - name: "categories"
     label: "Categories"
     folder: "src/content/categories"
@@ -145,7 +147,7 @@ collections:
     slug: "{{fields.slug}}"
     fields:
       - { label: "Category Name", name: "title", widget: "string" }
-      - { label: "URL Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Must be lowercase letters, numbers, and hyphens only'], hint: "URL-friendly version (e.g., health-fitness)" }
+      - { label: "URL Slug", name: "slug", widget: "string", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Must be lowercase letters, numbers, and hyphens only'] }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Icon", name: "icon", widget: "select", options: ["smartphone", "laptop", "home", "garden", "utensils", "chef", "heart", "dumbbell", "palette", "sparkles", "trophy", "gamepad", "star", "lightning"] }
       - { label: "Color Class", name: "colorClass", widget: "string", default: "bg-blue-100 text-blue-800" }
@@ -153,7 +155,7 @@ collections:
       - { label: "Product Count", name: "productCount", widget: "number", default: 0 }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  # Homepage Content
+  # ✅ Homepage Content
   - name: "homepage"
     label: "Homepage"
     files:
@@ -179,7 +181,6 @@ collections:
                 fields:
                   - { label: "Text", name: "text", widget: "string" }
                   - { label: "URL", name: "url", widget: "string" }
-          
           - label: "Featured Product"
             name: "featuredProduct"
             widget: "object"
@@ -192,7 +193,6 @@ collections:
               - { label: "CTA Text", name: "ctaText", widget: "string" }
               - { label: "CTA URL", name: "ctaUrl", widget: "string" }
               - { label: "Price", name: "price", widget: "string" }
-          
           - label: "Categories"
             name: "categories"
             widget: "list"
@@ -202,7 +202,6 @@ collections:
               - { label: "Product Count", name: "count", widget: "number" }
               - { label: "Color Class", name: "colorClass", widget: "string", default: "bg-blue-100 text-blue-800" }
               - { label: "Description", name: "description", widget: "text" }
-          
           - label: "Why Choose Us"
             name: "whyChooseUs"
             widget: "list"
@@ -211,7 +210,6 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Icon", name: "icon", widget: "select", options: ["heart", "lightning", "trophy", "star", "chart", "users"] }
               - { label: "Color Class", name: "colorClass", widget: "string", default: "bg-primary-100" }
-          
           - label: "Stats"
             name: "stats"
             widget: "list"
@@ -219,8 +217,7 @@ collections:
               - { label: "Number", name: "number", widget: "string" }
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Icon", name: "icon", widget: "select", options: ["star", "chart", "users", "trending", "trophy", "heart"] }
-      
-  # Pages
+    # ✅ Pages
   - name: "pages"
     label: "Pages"
     files:
@@ -231,7 +228,6 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
           - { label: "Body", name: "body", widget: "markdown" }
-          
       - label: "Contact Page"
         name: "contact"
         file: "src/content/pages/contact.md"
@@ -239,5 +235,32 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Description", name: "description", widget: "text" }
           - { label: "Body", name: "body", widget: "markdown" }
-          
-  # Amazon Affiliate Settings remain in separate file for security
+      - label: "Privacy Policy Page"
+        name: "privacy-policy"
+        file: "src/content/pages/privacy-policy.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Affiliate Disclosure Page"
+        name: "affiliate-disclosure"
+        file: "src/content/pages/affiliate-disclosure.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Terms of Service Page"
+        name: "terms-of-service"
+        file: "src/content/pages/terms-of-service.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+
+
+
+
+
+
+
